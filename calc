@@ -1,1 +1,26 @@
-y
+import math
+type = input("Choose type : Normal/Relation")
+if type in ["normal","Normal"]:
+    if Second == "+":
+        mix = First + Third
+        print (f"Your Total is : {round(mix,3)}")
+
+    elif Second == "-":
+        mix = First - Third
+        print (f"Your Total is : {round(mix,3)}")
+
+    elif Second in ["x","×","*"]:
+        mix = First * Third
+        print (f"Your Total is : {round(mix,3)}")
+
+    elif Second in ["÷","/"]:
+
+        if Third == 0:
+            print("Error Cant devide by 0")
+
+        else:
+             mix = First / Third
+             print (f"Your Total is : {round(mix,3)}")
+    else:
+          print(f"({Second}) is not a valid opperation ")
+elif type == ["Relation"] or ["relation"]:
