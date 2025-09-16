@@ -1,6 +1,11 @@
 import math
-type = input("Choose type : Normal/Relation")
-if type in ["normal","Normal"]:
+mode = input("""Choose type  [Normal/Formula] :  """)
+
+if mode in ["normal","Normal"]:
+    First = float(input("Your first Number : "))
+    Second = input("would u prefer + or - or ÷ or ×: ")
+    Third = float(input("Your Second Number : "))
+
     if Second == "+":
         mix = First + Third
         print (f"Your Total is : {round(mix,3)}")
@@ -23,4 +28,75 @@ if type in ["normal","Normal"]:
              print (f"Your Total is : {round(mix,3)}")
     else:
           print(f"({Second}) is not a valid opperation ")
-elif type == ["Relation"] or ["relation"]:
+
+elif mode in ["Formula","formula"]:
+    print("                                               Available categories:  Math / physics / algebra / chemistry")
+    First = (input("Choose The Operation :  "))
+    if First in["Math","math"]:
+      path = input("Volume(V) ou Aire(A)")
+      if path in ["aire","Aire","A","a"]:
+        formula = input("""Choose The Formula : 
+       1/ Aire du carré : A = c²
+       2/ Aire du rectangle: A = L.l    
+       3/ Aire du cercle:A = π.r²
+       4/ Aire du triangle:A = b×h/2
+       
+        """)
+        if formula == "1":
+            A_1 = float(input("Enter c value : "))
+            Aire_du_carré = pow(A_1,2)
+            print(f"Aire du carré : {round(Aire_du_carré,3)} m²")
+        elif formula == "2":
+            A_2 = float(input("Enter L value : "))
+            A_2_1 = float(input("Enter l value : "))
+            Aire_du_rectangle = A_2 * A_2_1
+            print(f"Aire du rectangle : {round(Aire_du_rectangle,3)} m²")
+        elif formula == "3":
+            A_3 = float(input("Enter r value : "))
+            Aire_du_cercle = math.pi * pow(A_3,2)
+            print (f"Aire du cercle : {round(Aire_du_cercle,3)} m²")
+        elif formula == "4":
+            A_4_1 = float(input("Enter b value : "))
+            A_4_2 = float(input("Enter h value : "))
+            Aire_du_triangle = A_4_2 * A_4_1 / 2
+            print(f"Aire du Triangle : {round(Aire_du_triangle,3)} m²")
+
+      elif path in ["volume", "Volume", "V","v"]:
+        formula = input("""Choose The Formula :
+         1/ Volume du cylindre : V = π.r².h
+         2/ Volume de la sphère :V= 4/3.π.r'3
+         3/ Volume du cône : V = 1/3.π.r².h  """)
+        if formula == "1":
+            V_1_1 = float(input("Enter r value : "))
+            V_1_2 = float(input("Enter h value : "))
+            Volume_du_cylindre = math.pi * pow(V_1_1,2) * V_1_2
+            print(f"Volume du cylindre : {round(Volume_du_cylindre,3)} m³")
+        elif formula == "2":
+            V_2 = float(input("Enter r value : "))
+            Volume_de_la_sphère = 4 / 3 * math.pi * pow(V_2,3)
+            print(f"Volume de la sphère : {round(Volume_de_la_sphère,3)} m³")
+        elif formula == "3":
+            V_3_1 = float(input("Enter r value : "))
+            V_3_2 = float(input("Enter h value : "))
+            Volume_du_cône = 1 / 3 * math.pi * pow(V_3_1,2) * V_3_2
+            print(f"Volume du cône : {round(Volume_du_cône,3)} m³")
+        else :
+            print(f"{formula}تحت الإنشاء")
+      else :
+          print(f"({path}) is not a valid opperation ")
+
+    elif First in ["Physics","physics"]:
+        print("تحت الإنشاء")
+    elif First in ["Algebra","algebra"]:
+         print("تحت الإنشاء")
+    elif First in ["Chemistry","chemistry"]:
+         print("تحت الإنشاء")
+    else:
+         print(f"({First}) is not a valid opperation ")
+
+
+
+
+
+else:
+    print("invalid input")
